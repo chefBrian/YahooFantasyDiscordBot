@@ -38,9 +38,10 @@ fun Observable<Message>.convertToMessageInfo(): Observable<Pair<String, String>>
     }
 
 private fun createTitle(title: String): String {
-    return "\uD83D\uDCE3 ${("$title Alert").toUpperCase().bold()}\\n━━━━━━━━━"
+    // return "\uD83D\uDCE3 ${("$title Alert").toUpperCase().bold()}\\n━━━━━━━━━"
+    return ""
 }
 
 private fun createMessage(alertTitle: String, message: String): Pair<String, String> {
-    return message
+    return pair(alertTitle, message)
 }
