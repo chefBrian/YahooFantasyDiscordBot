@@ -60,14 +60,14 @@ private fun addMessage(event: Element): Message {
         val nflTeam = player.select("editorial_team_abbr").text()
         val position = player.select("display_position").text()
 
-        playersAdded.append("${name.bold()} ($nflTeam - $position), ")
+        playersAdded.append("$name ($nflTeam - $position), ")
     }
 
     val finalMessage = playersAdded.trimEnd().removeSuffix(",")
 
     return Message.Transaction.Add(
         "${fantasyTeam.bold()}\\n" +
-                "➕ $finalMessage"
+                ":plus:  $finalMessage"
     )
 }
 
@@ -83,14 +83,14 @@ private fun dropMessage(event: Element): Message {
         val nflTeam = player.select("editorial_team_abbr").text()
         val position = player.select("display_position").text()
 
-        playersDropped.append("${name.bold()} ($nflTeam - $position), ")
+        playersDropped.append("$name ($nflTeam - $position), ")
     }
 
     val finalMessage = playersDropped.trimEnd().removeSuffix(",")
 
     return Message.Transaction.Drop(
         "${fantasyTeam.bold()}\\n" +
-                "➖ $finalMessage"
+                ":minus:  $finalMessage"
     )
 }
 
@@ -109,7 +109,7 @@ private fun addDropMessage(event: Element): Message {
         val nflTeam = player.select("editorial_team_abbr").text()
         val position = player.select("display_position").text()
 
-        val e = "${name.bold()} ($nflTeam - $position), "
+        val e = "$name ($nflTeam - $position), "
 
         if (player.select("type").text() == "add") {
             playersAdded.append(e)
@@ -125,8 +125,8 @@ private fun addDropMessage(event: Element): Message {
 
     return Message.Transaction.AddDrop(
         "${fantasyTeam.bold()}\\n" +
-                "➕ $finalMessageAdded\\n" +
-                "➖ $finalMessageDropped"
+                ":plus:  $finalMessageAdded\\n" +
+                ":minus:  $finalMessageDropped"
     )
 }
 
@@ -145,7 +145,7 @@ private fun tradeMessage(event: Element): Message {
         val nflTeam = player.select("editorial_team_abbr").text()
         val position = player.select("display_position").text()
 
-        val e = "${name.bold()} ($nflTeam - $position), "
+        val e = "$name ($nflTeam - $position), "
 
         if (fantasyTeam == trader) {
             fromTraderTeam.append(e)
@@ -159,10 +159,10 @@ private fun tradeMessage(event: Element): Message {
 
     return Message.Transaction.Trade(
         "${trader.bold()} received: \\n" +
-        "🔀 $finalMessageFromTradee\\n" +
+        ":trade:  $finalMessageFromTradee\\n" +
         "${tradee.bold()} received:\\n" +
-        "🔀 $finalMessageFromTrader\\n" +
-        "*Draft picks will not be shown"
+        ":trade:  $finalMessageFromTrader\\n" +
+        "*Draft picks may not be shown"
     )
 }
 
