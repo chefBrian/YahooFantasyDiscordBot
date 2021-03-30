@@ -55,7 +55,7 @@ class Arbiter(
         setupMatchUpBridge()
         setupStandingsBridge()
         setupMessageBridge()
-        sendInitialMessage()
+        // sendInitialMessage()
         alertsRunner.start()
     }
 

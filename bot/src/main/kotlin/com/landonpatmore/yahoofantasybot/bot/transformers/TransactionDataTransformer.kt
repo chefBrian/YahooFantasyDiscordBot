@@ -67,7 +67,7 @@ private fun addMessage(event: Element): Message {
 
     return Message.Transaction.Add(
         "${fantasyTeam.bold()}\\n" +
-                "✅ $finalMessage"
+                "➕ $finalMessage"
     )
 }
 
@@ -90,7 +90,7 @@ private fun dropMessage(event: Element): Message {
 
     return Message.Transaction.Drop(
         "${fantasyTeam.bold()}\\n" +
-                "❌ $finalMessage"
+                "➖ $finalMessage"
     )
 }
 
@@ -125,8 +125,8 @@ private fun addDropMessage(event: Element): Message {
 
     return Message.Transaction.AddDrop(
         "${fantasyTeam.bold()}\\n" +
-                "✔️ $finalMessageAdded\\n" +
-                "❌ $finalMessageDropped"
+                "➕ $finalMessageAdded\\n" +
+                "➖ $finalMessageDropped"
     )
 }
 

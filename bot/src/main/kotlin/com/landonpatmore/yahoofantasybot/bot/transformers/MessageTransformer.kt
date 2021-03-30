@@ -42,5 +42,5 @@ private fun createTitle(title: String): String {
 }
 
 private fun createMessage(alertTitle: String, message: String): Pair<String, String> {
-    return Pair(alertTitle, message)
+    return message
 }
