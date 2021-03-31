@@ -67,7 +67,7 @@ private fun addMessage(event: Element): Message {
 
     return Message.Transaction.Add(
         "${fantasyTeam.bold()}\\n" +
-                ":plus:  $finalMessage"
+                "<:plus:826595998188175360>  $finalMessage"
     )
 }
 
@@ -90,7 +90,7 @@ private fun dropMessage(event: Element): Message {
 
     return Message.Transaction.Drop(
         "${fantasyTeam.bold()}\\n" +
-                ":minus:  $finalMessage"
+                "<:minus:826596117923889152>  $finalMessage"
     )
 }
 
@@ -125,8 +125,8 @@ private fun addDropMessage(event: Element): Message {
 
     return Message.Transaction.AddDrop(
         "${fantasyTeam.bold()}\\n" +
-                ":plus:  $finalMessageAdded\\n" +
-                ":minus:  $finalMessageDropped"
+                "<:plus:826595998188175360>  $finalMessageAdded\\n" +
+                "<:minus:826596117923889152>  $finalMessageDropped"
     )
 }
 
@@ -159,9 +159,9 @@ private fun tradeMessage(event: Element): Message {
 
     return Message.Transaction.Trade(
         "${trader.bold()} received: \\n" +
-        ":trade:  $finalMessageFromTradee\\n" +
+        "<:trade:826598334521147433>  $finalMessageFromTradee\\n" +
         "${tradee.bold()} received:\\n" +
-        ":trade:  $finalMessageFromTrader\\n" +
+        "<:trade:826598334521147433>  $finalMessageFromTrader\\n" +
         "*Draft picks may not be shown"
     )
 }
