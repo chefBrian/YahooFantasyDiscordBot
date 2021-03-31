@@ -40,6 +40,6 @@ class Discord(url: String) : MessagingService(url) {
     override fun cleanMessage(message: String): String = message
 
     override fun generateMessage(message: Pair<String, String>, title: Boolean): String {
-        "${message.second}"
+        return "${message.second}"
     }
 }
